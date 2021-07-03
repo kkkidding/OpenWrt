@@ -16,6 +16,7 @@ rm -Rf tools/ucl && svn export https://github.com/coolsnowwolf/lede/trunk/tools/
 sed -i 's?zstd$?zstd ucl upx\n$(curdir)/upx/compile := $(curdir)/ucl/compile?g' tools/Makefile
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/target/linux/generic/hack-5.4 target/linux/generic/hack-5.4
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/target/linux/generic/hack-5.10 target/linux/generic/hack-5.10
+rm -rf target/linux/generic/hack-5.10/998-add-ndo-do-ioctl.patch
 wget -O target/linux/generic/pending-5.4/601-add-kernel-imq-support.patch https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/target/linux/generic/pending-5.4/601-add-kernel-imq-support.patch
 rm -rf package/network/services/ppp package/libs/libnfnetlink
 svn export https://github.com/openwrt/openwrt/trunk/package/network/services/ppp package/network/services/ppp
